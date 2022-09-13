@@ -1,0 +1,10 @@
+@import '../../assets/scss/variables';
+
+.container {
+  width: 100%;
+  height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $LightPrimary;
+}

@@ -3,10 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../assets/images/logo.png';
+import '../assets/scss/_variables.scss';
 
 const Header = () => {
   return (
-    <nav className='navbar navbar-expand-lg bg-light py-2 px-2'>
+    <nav
+      className='navbar navbar-expand-lg bg-light py-2 px-2'
+      style={{ height: '5rem' }}
+    >
       <div className='container-fluid'>
         <Link className='nav-link d-flex gap-3 align-items-center' to={'/'}>
           <img src={Logo} width={64} alt='logo' />
@@ -26,7 +30,7 @@ const Header = () => {
         <div className='collapse navbar-collapse' id='navbarTogglerDemo02'>
           <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
             <li className='nav-item ms-2'>
-              <Link className='nav-link' to={'/'}>
+              <Link className='nav-link' to={'/reservation'}>
                 Make a Reservation
               </Link>
             </li>
