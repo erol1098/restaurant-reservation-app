@@ -4,7 +4,9 @@
   width: 100%;
   height: calc(100vh - 5rem);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   // background-color: $LightPrimary;
 }

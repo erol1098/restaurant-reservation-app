@@ -1,11 +1,13 @@
 import React from 'react';
+
+import PersonalInfoForm from '../components/PersonalInfo/PersonalInfoForm';
 import Container from '../Layouts/Container/Container';
-import Form from '../Layouts/Form/Form';
 
 const Reservation = () => {
   return (
     <Container>
-      <Form></Form>
+      <h1>Personal Info</h1>
+      <PersonalInfoForm />
     </Container>
   );
 };

@@ -5,6 +5,49 @@
   min-width: 250px;
   height: 30rem;
   padding: 0 2rem;
+  font-size: 1.2rem;
+
   background-color: $LightPrimary;
+  border-radius: 0.7rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+
+  & > input {
+    height: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & > label {
+    font-weight: 700;
+    padding-inline-start: 1rem;
+  }
+
+  & > button {
+    height: 3rem;
+    margin-top: 1rem;
+
+    background-color: $Accent;
+    color: #fff;
+
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }
