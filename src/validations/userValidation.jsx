@@ -23,4 +23,9 @@ export const foodChoiceSchema = Yup.object().shape({
   ingredients: Yup.array()
     .min(1, 'Choose at least 1')
     .max(3, 'Choose at most 3'),
+  drink: Yup.string(),
+  additional: Yup.string().max(
+    255,
+    'Your request cannot be longer than 255 character!'
+  ),
 });

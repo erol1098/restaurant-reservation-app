@@ -42,11 +42,11 @@ const Reservation = () => {
           <Formik
             initialValues={{
               ingredients: [],
-              // drink: '',
-              // additional: '',
+              drink: '',
+              additional: '',
             }}
             validationSchema={foodChoiceSchema}
-            onSubmit={(values) => console.log('fwef', values)}
+            onSubmit={(values) => setFoodChoice(values)}
             component={(props) => <FoodChoiceForm {...props} />}
             validateOnChange={false}
             validateOnBlur={false}
