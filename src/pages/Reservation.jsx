@@ -4,11 +4,15 @@ import { Formik } from 'formik';
 
 import PersonalInfoForm from '../components/PersonalInfoForm';
 import Container from '../Layouts/Container/Container';
-import { userInfoSchema } from '../validations/userValidation';
+import {
+  foodChoiceSchema,
+  userInfoSchema,
+} from '../validations/userValidation';
 import AppContext from '../context/app-context';
+import FoodChoiceForm from '../components/FoodChoiceForm';
 
 const Reservation = () => {
-  const { setUserInfo, flag, setFlag } = useContext(AppContext);
+  const { setUserInfo, setFoodChoice, flag, setFlag } = useContext(AppContext);
   return (
     <Container>
       {!flag && (
@@ -34,17 +38,16 @@ const Reservation = () => {
       )}
       {flag && (
         <>
-          <h1>Personal Info</h1>
+          <h1>Food Choice</h1>
           <Formik
             initialValues={{
-              firstName: '',
-              lastName: '',
-              birth: '',
-              gender: '',
+              ingredients: [],
+              // drink: '',
+              // additional: '',
             }}
-            validationSchema={userInfoSchema}
-            onSubmit={(values) => setUserInfo(values)}
-            component={(props) => <PersonalInfoForm {...props} />}
+            validationSchema={foodChoiceSchema}
+            onSubmit={(values) => console.log('fwef', values)}
+            component={(props) => <FoodChoiceForm {...props} />}
             validateOnChange={false}
             validateOnBlur={false}
           />

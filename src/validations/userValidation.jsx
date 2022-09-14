@@ -18,3 +18,9 @@ export const userInfoSchema = Yup.object().shape({
 
   gender: Yup.string().required('Select Gender is a required field.'),
 });
+
+export const foodChoiceSchema = Yup.object().shape({
+  ingredients: Yup.array()
+    .min(1, 'Choose at least 1')
+    .max(3, 'Choose at most 3'),
+});
