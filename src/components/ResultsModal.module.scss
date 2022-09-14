@@ -1,3 +1,4 @@
+@import '../assets/scss/variables';
 .darkBG {
   background-color: rgba(0, 0, 0, 0.2);
   width: 100vw;
@@ -37,4 +38,21 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+button {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+  &[type='submit'] {
+    background-color: $Accent;
+    color: #fff;
+  }
+  &[type='button'] {
+    background-color: $Danger;
+    color: #fff;
+  }
 }

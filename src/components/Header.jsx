@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../assets/images/logo.png';
-import '../assets/scss/_variables.scss';
+import styles from './Header.module.scss';
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
       <div className='container-fluid'>
         <Link className='nav-link d-flex gap-3 align-items-center' to={'/'}>
           <img src={Logo} width={64} alt='logo' />
-          <h3 className='text-primary'>Merkez Lokantası</h3>
+          <h3 className={styles.logo}>Merkez Lokantası</h3>
         </Link>
         <button
           className='navbar-toggler'

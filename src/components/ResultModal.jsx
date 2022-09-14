@@ -8,7 +8,14 @@ import styles from './ResultsModal.module.scss';
 
 const ResultModal = () => {
   const navigate = useNavigate();
-  const { userInfo, foodChoice } = useContext(AppContext);
+  const {
+    userInfo,
+    foodChoice,
+    setUserInfo,
+    setFoodChoice,
+    setIsOpen,
+    setFlag,
+  } = useContext(AppContext);
   const { addNewEntry } = useFirebase();
 
   const handleSaveReservation = (e) => {
@@ -17,6 +24,14 @@ const ResultModal = () => {
       'personal-info': userInfo,
       'food-choice': foodChoice,
     });
+    navigate('/');
+  };
+
+  const handleCancel = () => {
+    setUserInfo('');
+    setFoodChoice('');
+    setIsOpen(false);
+    setFlag(false);
     navigate('/');
   };
 
@@ -38,10 +53,10 @@ const ResultModal = () => {
             <p>Additional Requests : {foodChoice?.additional} </p>
           </div>
           <form className={styles.form} onSubmit={handleSaveReservation}>
-            <button type='button' onClick={() => navigate('/')}>
+            <button type='button' onClick={handleCancel}>
               Cancel
             </button>
-            <button type='submit'>Submit</button>
+            <button type='submit'>Make Reservation</button>
           </form>
         </div>
       </div>
