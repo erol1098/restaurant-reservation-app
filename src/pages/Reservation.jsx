@@ -20,6 +20,8 @@ const Reservation = () => {
         validationSchema={userInfoSchema}
         onSubmit={(values) => console.log(values)}
         component={(props) => <PersonalInfoForm {...props} />}
+        validateOnChange={false}
+        validateOnBlur={false}
       ></Formik>
     </Container>
   );
