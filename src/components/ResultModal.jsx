@@ -53,10 +53,12 @@ const ResultModal = () => {
             <p>Additional Requests : {foodChoice?.additional} </p>
           </div>
           <form className={styles.form} onSubmit={handleSaveReservation}>
-            <button type='button' onClick={handleCancel}>
+            <button className='btn' type='button' onClick={handleCancel}>
               Cancel
             </button>
-            <button type='submit'>Make Reservation</button>
+            <button className='btn' type='submit'>
+              Make Reservation
+            </button>
           </form>
         </div>
       </div>
