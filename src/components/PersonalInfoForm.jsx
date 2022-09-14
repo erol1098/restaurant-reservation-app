@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Form, Field } from 'formik';
+import { Form } from 'formik';
 
 import FormWrapper from '../Layouts/Form/Form';
 
 const PersonalInfoForm = ({ values, handleChange, errors }) => {
-  console.log('birth', values.birth);
   return (
     <FormWrapper>
       <Form>
