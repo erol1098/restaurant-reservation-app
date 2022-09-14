@@ -8,8 +8,12 @@ import styles from './Header.module.scss';
 const Header = () => {
   return (
     <nav
-      className='navbar navbar-expand-lg bg-light py-2 px-2'
-      style={{ height: '5rem' }}
+      className='navbar navbar-expand-lg py-2 px-2'
+      style={{
+        height: '5rem',
+        background: '#eef2f3',
+        borderBottom: '5px solid #bf9746',
+      }}
     >
       <div className='container-fluid'>
         <Link className='nav-link d-flex gap-3 align-items-center' to={'/'}>
@@ -30,18 +34,18 @@ const Header = () => {
         <div className='collapse navbar-collapse' id='navbarTogglerDemo02'>
           <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
             <li className='nav-item ms-2'>
-              <Link className='nav-link' to={'/reservation'}>
+              <Link className={`${styles.li} nav-link`} to={'/reservation'}>
                 Make a Reservation
               </Link>
             </li>
             <li className='nav-item ms-2'>
-              <Link className='nav-link' to={'/'}>
-                About Merkez Lokantası
+              <Link className={`${styles.li} nav-link`} to={'/'}>
+                About Us
               </Link>
             </li>
             <li className='nav-item ms-2'>
-              <Link className='nav-link' to={'/'}>
-                Contact Us
+              <Link className={`${styles.li} nav-link`} to={'/'}>
+                Contact
               </Link>
             </li>
           </ul>

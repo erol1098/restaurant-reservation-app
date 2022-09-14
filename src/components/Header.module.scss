@@ -1,3 +1,12 @@
 .logo {
   font-family: 'Kaushan Script', cursive;
 }
+
+.li {
+  color: #212121;
+  font-weight: 700;
+
+  &:hover {
+    color: #bf976b;
+  }
+}
