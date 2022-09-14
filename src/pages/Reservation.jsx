@@ -10,9 +10,12 @@ import {
 } from '../validations/userValidation';
 import AppContext from '../context/app-context';
 import FoodChoiceForm from '../components/FoodChoiceForm';
+import ResultModal from '../components/ResultModal';
 
 const Reservation = () => {
-  const { setUserInfo, setFoodChoice, flag, setFlag } = useContext(AppContext);
+  const { setUserInfo, setFoodChoice, flag, setFlag, isOpen, setIsOpen } =
+    useContext(AppContext);
+
   return (
     <Container>
       {!flag && (
@@ -46,13 +49,17 @@ const Reservation = () => {
               additional: '',
             }}
             validationSchema={foodChoiceSchema}
-            onSubmit={(values) => setFoodChoice(values)}
+            onSubmit={(values) => {
+              setFoodChoice(values);
+              setIsOpen(true);
+            }}
             component={(props) => <FoodChoiceForm {...props} />}
             validateOnChange={false}
             validateOnBlur={false}
           />
         </>
       )}
+      {isOpen && <ResultModal />}
     </Container>
   );
 };

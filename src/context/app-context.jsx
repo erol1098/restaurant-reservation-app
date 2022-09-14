@@ -6,6 +6,7 @@ export const AppContextProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState('');
   const [foodChoice, setFoodChoice] = useState('');
   const [flag, setFlag] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   console.log('user', userInfo);
   console.log('food', foodChoice);
@@ -17,6 +18,8 @@ export const AppContextProvider = ({ children }) => {
     setFoodChoice,
     flag,
     setFlag,
+    isOpen,
+    setIsOpen,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
