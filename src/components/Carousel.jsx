@@ -11,7 +11,7 @@ const Carousel = () => {
       id='carouselExampleIndicators'
       className='carousel slide carousel-fade'
       data-bs-ride='carousel'
-      style={{ width: '100%', height: 'calc(100vh - 5rem)' }}
+      style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
     >
       <div className='carousel-indicators'>
         <button
@@ -46,7 +46,7 @@ const Carousel = () => {
           className='carousel-item active'
           style={{
             width: '100%',
-            height: 'calc(100vh - 5rem)',
+            height: 'calc(100vh - 6rem)',
           }}
         >
           <img
@@ -58,7 +58,7 @@ const Carousel = () => {
         </div>
         <div
           className='carousel-item'
-          style={{ width: '100%', height: 'calc(100vh - 5rem)' }}
+          style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
             src={p2}
@@ -69,7 +69,7 @@ const Carousel = () => {
         </div>
         <div
           className='carousel-item'
-          style={{ width: '100%', height: 'calc(100vh - 5rem)' }}
+          style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
             src={p3}
@@ -80,7 +80,7 @@ const Carousel = () => {
         </div>
         <div
           className='carousel-item'
-          style={{ width: '100%', height: 'calc(100vh - 5rem)' }}
+          style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
             src={p4}

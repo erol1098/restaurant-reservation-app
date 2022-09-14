@@ -8,12 +8,7 @@ import styles from './Header.module.scss';
 const Header = () => {
   return (
     <nav
-      className='navbar navbar-expand-lg py-2 px-2'
-      style={{
-        height: '5rem',
-        background: '#eef2f3',
-        borderBottom: '5px solid #bf9746',
-      }}
+      className={`${styles.navbar} navbar sticky-top  navbar-expand-lg py-2 px-2`}
     >
       <div className='container-fluid'>
         <Link className='nav-link d-flex gap-3 align-items-center' to={'/'}>

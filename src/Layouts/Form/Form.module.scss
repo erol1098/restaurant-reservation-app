@@ -2,12 +2,11 @@
 
 .form > form {
   width: 30rem;
-  height: 35rem;
 
   padding: 2rem;
   font-size: 1.2rem;
 
-  background-color: $LightPrimary;
+  background-color: $Primary;
   border-radius: 0.7rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
@@ -32,8 +31,9 @@
   }
 
   & > label {
-    font-weight: 700;
+    font-weight: 800;
     padding-inline-start: 1rem;
+    color: $PrimaryText;
   }
 
   & > button {
@@ -54,7 +54,7 @@
 
   & > p {
     font-size: 0.85rem;
-    color: red;
+    color: $Danger;
     margin: 0;
     padding: 0;
   }

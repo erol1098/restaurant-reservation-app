@@ -1,12 +1,22 @@
+@import '../assets/scss/variables';
+
+.navbar {
+  height: 6rem;
+  background: #eef2f3;
+  border-bottom: 5px solid $Text;
+}
+
 .logo {
   font-family: 'Kaushan Script', cursive;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .li {
-  color: #212121;
+  color: $PrimaryText;
   font-weight: 700;
 
   &:hover {
-    color: #bf976b;
+    color: $TextHover;
   }
 }

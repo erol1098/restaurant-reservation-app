@@ -18,21 +18,22 @@ const ResultModal = () => {
   } = useContext(AppContext);
   const { addNewEntry } = useFirebase();
 
-  const handleSaveReservation = (e) => {
-    e.preventDefault();
-    addNewEntry('reservations', {
-      'personal-info': userInfo,
-      'food-choice': foodChoice,
-    });
-    navigate('/');
-  };
-
   const handleCancel = () => {
     setUserInfo('');
     setFoodChoice('');
     setIsOpen(false);
     setFlag(false);
     navigate('/');
+  };
+
+  const handleSaveReservation = (e) => {
+    e.preventDefault();
+    addNewEntry('reservations', {
+      'personal-info': userInfo,
+      'food-choice': foodChoice,
+    });
+
+    handleCancel();
   };
 
   return (

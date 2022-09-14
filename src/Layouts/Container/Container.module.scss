@@ -2,16 +2,15 @@
 
 .container {
   width: 100%;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 6rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
-  // background-color: $LightPrimary;
 
   & > h1 {
     color: $Text;
     font-weight: 800;
+    margin-top: 1rem;
   }
 }
