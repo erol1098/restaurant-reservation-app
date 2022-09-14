@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Form.module.scss';
 
 const FormWrapper = ({ children }) => {
-  return <form className={styles.form}>{children}</form>;
+  return <div className={styles.form}>{children}</div>;
 };
 
 export default FormWrapper;
