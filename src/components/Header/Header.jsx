@@ -12,7 +12,7 @@ const Header = () => {
     >
       <div className='container-fluid'>
         <Link className='nav-link d-flex gap-3 align-items-center' to={'/'}>
-          <img src={Logo} width={100} alt='logo' />
+          <img src={Logo} width={75} alt='logo' />
           <h3 className={styles.logo}>Merkez Lokantası</h3>
         </Link>
         <button
@@ -34,12 +34,12 @@ const Header = () => {
               </Link>
             </li>
             <li className='nav-item ms-2'>
-              <Link className={`${styles.li} nav-link`} to={'/'}>
+              <Link className={`${styles.li} nav-link`} to={'/about'}>
                 About Us
               </Link>
             </li>
             <li className='nav-item ms-2'>
-              <Link className={`${styles.li} nav-link`} to={'/'}>
+              <Link className={`${styles.li} nav-link`} to={'/contact'}>
                 Contact
               </Link>
             </li>
