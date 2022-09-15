@@ -12,7 +12,7 @@ const Header = () => {
     >
       <div className='container-fluid'>
         <Link className='nav-link d-flex gap-3 align-items-center' to={'/'}>
-          <img src={Logo} width={64} alt='logo' />
+          <img src={Logo} width={100} alt='logo' />
           <h3 className={styles.logo}>Merkez Lokantası</h3>
         </Link>
         <button

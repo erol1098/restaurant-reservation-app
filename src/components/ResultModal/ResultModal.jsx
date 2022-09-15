@@ -103,13 +103,11 @@ const ResultModal = () => {
             <form className={styles.doneForm} onSubmit={handleDone}>
               {resId && (
                 <>
-                  <h3>
-                    Your reservation was saved with this reservation id:
-                    <br />
-                    <b>
-                      <i>{resId}</i>
-                    </b>
-                  </h3>
+                  <h4>Your reservation was saved with this reservation id:</h4>
+                  <b>
+                    <i>{resId}</i>
+                  </b>
+
                   <button className={styles.btn} type='submit'>
                     Done
                   </button>
