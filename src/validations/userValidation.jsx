@@ -14,7 +14,11 @@ export const userInfoSchema = Yup.object().shape({
     .required('Birth Date is a required field.')
     .test('birth', 'You must be at least 18 years old!', (value) => {
       return moment().diff(moment(value), 'years') >= 18;
-    }),
+    })
+    .min(
+      new Date('1900-01-01'),
+      'Birth Date field must be later than 01.01.1900'
+    ),
 
   gender: Yup.string().required('Select Gender is a required field.'),
 });

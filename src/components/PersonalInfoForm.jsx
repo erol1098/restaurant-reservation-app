@@ -45,11 +45,11 @@ const PersonalInfoForm = ({ values, handleChange, errors }) => {
           value={values.gender}
           onChange={handleChange}
         >
-          <option value=''>--Select Gender--</option>
+          <option value=''>-Select Gender-</option>
           <option value='male'>Male</option>
           <option value='female'>Female</option>
           <option value='other'>Other</option>
-          <option value='not'>Prefer not to specify</option>
+          <option value='N/A'>Prefer not to specify</option>
         </select>
         {errors.gender && <p>* {errors.gender}</p>}
         <button type='submit'>Next Step</button>
