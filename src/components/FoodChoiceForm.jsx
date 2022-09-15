@@ -54,7 +54,7 @@ const FoodChoiceForm = ({ values, handleChange, errors }) => {
           name='additional'
           id='additional'
           cols='30'
-          rows='10'
+          rows='5'
           value={values.additional}
           onChange={handleChange}
         ></textarea>

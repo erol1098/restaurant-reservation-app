@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
+import { SpinnerCircularFixed } from 'spinners-react';
 
 import AppContext from '../../context/app-context';
 import useFirebase from '../../hooks/useFirebase';
@@ -78,12 +80,19 @@ const ResultModal = () => {
               </form>
             </>
           )}
-          {isDone && resId && (
+          {isDone && (
             <form className={styles.doneForm} onSubmit={handleDone}>
-              <h3>Your reservation was saved with Reservation Id of {resId}</h3>
-              <button className={styles.btn} type='submit'>
-                Done
-              </button>
+              {resId && (
+                <>
+                  <h3>
+                    Your reservation was saved with Reservation Id of {resId}
+                  </h3>
+                  <button className={styles.btn} type='submit'>
+                    Done
+                  </button>
+                </>
+              )}
+              {!resId && <SpinnerCircularFixed size={100} />}
             </form>
           )}
         </div>
