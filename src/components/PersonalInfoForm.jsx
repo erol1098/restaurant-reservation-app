@@ -1,12 +1,18 @@
 import React from 'react';
 
 import { Form } from 'formik';
+import { FaRegTimesCircle } from 'react-icons/fa';
 
 import FormWrapper from '../Layouts/Form/Form';
 
-const PersonalInfoForm = ({ values, handleChange, errors }) => {
+const PersonalInfoForm = ({ values, handleChange, errors, onCancel }) => {
   return (
     <FormWrapper>
+      <FaRegTimesCircle
+        className='cancel-btn'
+        size={30}
+        onClick={() => onCancel()}
+      />
       <Form>
         <label htmlFor='firstName'>First Name</label>
         <input

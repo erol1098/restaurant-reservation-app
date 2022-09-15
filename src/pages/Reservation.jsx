@@ -11,10 +11,20 @@ import {
 import AppContext from '../context/app-context';
 import FoodChoiceForm from '../components/FoodChoiceForm';
 import ResultModal from '../components/ResultModal/ResultModal';
+import { useNavigate } from 'react-router-dom';
 
 const Reservation = () => {
+  const navigate = useNavigate();
   const { setUserInfo, setFoodChoice, flag, setFlag, isOpen, setIsOpen } =
     useContext(AppContext);
+
+  const handleCancel = () => {
+    setUserInfo('');
+    setFoodChoice('');
+    setIsOpen(false);
+    setFlag(false);
+    navigate('/');
+  };
 
   return (
     <Container>
@@ -33,7 +43,9 @@ const Reservation = () => {
               setUserInfo(values);
               setFlag(true);
             }}
-            component={(props) => <PersonalInfoForm {...props} />}
+            component={(props) => (
+              <PersonalInfoForm {...props} onCancel={handleCancel} />
+            )}
             validateOnChange={false}
             validateOnBlur={false}
           />
@@ -53,7 +65,9 @@ const Reservation = () => {
               setFoodChoice(values);
               setIsOpen(true);
             }}
-            component={(props) => <FoodChoiceForm {...props} />}
+            component={(props) => (
+              <FoodChoiceForm {...props} onCancel={handleCancel} />
+            )}
             validateOnChange={false}
             validateOnBlur={false}
           />

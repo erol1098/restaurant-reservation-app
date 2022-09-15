@@ -1,12 +1,14 @@
 import React from 'react';
 
 import { Field, Form } from 'formik';
+import { FaRegTimesCircle } from 'react-icons/fa';
 
 import FormWrapper from '../Layouts/Form/Form';
 
-const FoodChoiceForm = ({ values, handleChange, errors }) => {
+const FoodChoiceForm = ({ values, handleChange, errors, onCancel }) => {
   return (
     <FormWrapper>
+      <FaRegTimesCircle size={30} onClick={() => onCancel()} />
       <Form>
         <b>Ingredients (Select 1 to 3)</b>
         <div className='checkbox-group'>
