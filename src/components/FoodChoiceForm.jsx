@@ -9,50 +9,52 @@ const FoodChoiceForm = ({ values, handleChange, errors }) => {
     <FormWrapper>
       <Form>
         <b>Ingredients (Select 1 to 3)</b>
-        <div>
-          <Field type='checkbox' name='ingredients' id='meat' value='meat' />
+        <div className='checkbox-group'>
+          <Field type='checkbox' name='ingredients' id='meat' value='Meat' />
           <label htmlFor='meat'>Meat</label>
 
           <Field
             type='checkbox'
             name='ingredients'
             id='vegetables'
-            value='vegetables'
+            value='Vegetables'
           />
           <label htmlFor='vegetables'>Vegetables</label>
 
-          <Field type='checkbox' name='ingredients' id='rice' value='rice' />
+          <Field type='checkbox' name='ingredients' id='rice' value='Rice' />
           <label htmlFor='rice'>Rice</label>
 
           <Field
             type='checkbox'
             name='ingredients'
             id='salads'
-            value='salads'
+            value='Salads'
           />
           <label htmlFor='salads'>Salads</label>
         </div>
         {errors.ingredients && <p>* {errors.ingredients}</p>}
-        <br />
         <b>Drink</b>
         <div>
-          <Field type='radio' name='drink' id='soda' value='soda' />
+          <Field type='radio' name='drink' id='soda' value='Soda' />
           <label htmlFor='soda'>Soda</label>
 
-          <Field type='radio' name='drink' id='ayran' value='ayran' />
+          <Field type='radio' name='drink' id='ayran' value='Ayran' />
           <label htmlFor='ayran'>Ayran</label>
 
-          <Field type='radio' name='drink' id='wine' value='wine' />
+          <Field type='radio' name='drink' id='wine' value='Wine' />
           <label htmlFor='wine'>Wine</label>
 
-          <Field type='radio' name='drink' id='no' value='no' checked />
-          <label htmlFor='no'>No Drink</label>
+          <Field type='radio' name='drink' id='n/a' value='N/A' />
+          <label htmlFor='n/a'>No Drink</label>
         </div>
 
-        <label htmlFor='additional'>Additional Requests</label>
+        <label htmlFor='additional'>
+          <b> Additional Requests</b>
+        </label>
         <textarea
           name='additional'
           id='additional'
+          placeholder='Enter your additional requests (Optional)'
           cols='30'
           rows='5'
           value={values.additional}

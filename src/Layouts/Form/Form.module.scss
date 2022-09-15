@@ -19,8 +19,6 @@
   & > input,
   select {
     height: 3rem;
-    // padding-inline-start: 2rem;
-    // padding-inline-end: 2rem;
     padding: 0 2rem;
     border: none;
     border-radius: 0.5rem;
@@ -58,5 +56,28 @@
     color: $Danger;
     margin: 0;
     padding: 0;
+  }
+
+  & b {
+    color: $Accent;
+  }
+  & > textarea {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    text-indent: 1rem;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 0.3rem;
+
+    & > label {
+      margin-left: 0.5rem;
+      margin-right: 1rem;
+    }
   }
 }

@@ -45,8 +45,8 @@ const Reservation = () => {
           <Formik
             initialValues={{
               ingredients: [],
-              drink: '',
-              additional: '',
+              drink: 'N/A',
+              additional: 'N/A',
             }}
             validationSchema={foodChoiceSchema}
             onSubmit={(values) => {
