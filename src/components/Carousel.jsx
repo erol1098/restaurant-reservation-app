@@ -1,10 +1,5 @@
 import React from 'react';
 
-import p1 from '../assets/images/1.jpg';
-import p2 from '../assets/images/2.jpg';
-import p3 from '../assets/images/3.jpg';
-import p4 from '../assets/images/4.jpg';
-
 const Carousel = () => {
   return (
     <div
@@ -50,7 +45,7 @@ const Carousel = () => {
           }}
         >
           <img
-            src={p1}
+            src='https://firebasestorage.googleapis.com/v0/b/merkez-lokantasi.appspot.com/o/1.jpg?alt=media&token=dee540f2-3fc5-44fa-9fff-82e484139bf8'
             className='d-block w-100 h-100'
             alt='...'
             style={{ objectFit: 'cover' }}
@@ -61,7 +56,7 @@ const Carousel = () => {
           style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
-            src={p2}
+            src='https://firebasestorage.googleapis.com/v0/b/merkez-lokantasi.appspot.com/o/2.jpg?alt=media&token=9cd00b7e-6598-4a81-9e6a-ec10d2c994f6'
             className='d-block w-100 h-100'
             alt='...'
             style={{ objectFit: 'cover' }}
@@ -72,7 +67,7 @@ const Carousel = () => {
           style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
-            src={p3}
+            src='https://firebasestorage.googleapis.com/v0/b/merkez-lokantasi.appspot.com/o/3.jpg?alt=media&token=f593fd5a-e2c8-4164-a308-4b39f89e1bdf'
             className='d-block w-100 h-100'
             alt='...'
             style={{ objectFit: 'cover' }}
@@ -83,7 +78,7 @@ const Carousel = () => {
           style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
-            src={p4}
+            src='https://firebasestorage.googleapis.com/v0/b/merkez-lokantasi.appspot.com/o/4.jpg?alt=media&token=2de80cdf-9c6f-48b7-be31-fed0335c639f'
             className='d-block w-100 h-100'
             alt='...'
             style={{ objectFit: 'cover' }}
