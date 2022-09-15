@@ -54,17 +54,36 @@ const ResultModal = () => {
         <div className={styles.modal}>
           {!isDone && (
             <>
-              <h3>Do you confirm these info?</h3>
+              <h3>Do you confirm the reservation?</h3>
               <div className={styles.content}>
-                <p>First Name: {userInfo?.firstName} </p>
-                <p>Last Name: {userInfo?.lastName} </p>
-                <p>Birth Date : {userInfo?.birth} </p>
-                <p>Gender: {userInfo?.gender} </p>
+                <p>
+                  <b>First Name:</b> {userInfo?.firstName}{' '}
+                </p>
+                <p>
+                  <b>Last Name:</b> {userInfo?.lastName}{' '}
+                </p>
+                <p>
+                  <b>Birth Date:</b>{' '}
+                  {new Intl.DateTimeFormat('tr-TR', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric',
+                  }).format(new Date(userInfo?.birth))}
+                </p>
+                <p>
+                  <b>Gender:</b> {userInfo?.gender}
+                </p>
               </div>
               <div className={styles.content}>
-                <p>Ingredients : {foodChoice?.ingredients} </p>
-                <p>Drink: {foodChoice?.drink} </p>
-                <p>Additional Requests : {foodChoice?.additional} </p>
+                <p>
+                  <b>Ingredients:</b> {foodChoice?.ingredients}{' '}
+                </p>
+                <p>
+                  <b>Drink:</b> {foodChoice?.drink}{' '}
+                </p>
+                <p>
+                  <b>Additional Requests :</b> {foodChoice?.additional}{' '}
+                </p>
               </div>
               <form className={styles.form} onSubmit={handleSaveReservation}>
                 <button
@@ -85,7 +104,11 @@ const ResultModal = () => {
               {resId && (
                 <>
                   <h3>
-                    Your reservation was saved with Reservation Id of {resId}
+                    Your reservation was saved with this reservation id:
+                    <br />
+                    <b>
+                      <i>{resId}</i>
+                    </b>
                   </h3>
                   <button className={styles.btn} type='submit'>
                     Done
