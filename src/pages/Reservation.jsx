@@ -10,7 +10,7 @@ import {
 } from '../validations/userValidation';
 import AppContext from '../context/app-context';
 import FoodChoiceForm from '../components/FoodChoiceForm';
-import ResultModal from '../components/ResultModal';
+import ResultModal from '../components/ResultModal/ResultModal';
 
 const Reservation = () => {
   const { setUserInfo, setFoodChoice, flag, setFlag, isOpen, setIsOpen } =

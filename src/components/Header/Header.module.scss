@@ -1,9 +1,10 @@
-@import '../assets/scss/variables';
+@import '../../assets/scss/variables';
 
 .navbar {
-  height: 6rem;
+  min-height: 6rem;
   background: #eef2f3;
   border-bottom: 5px solid $Text;
+  transition: height 1s;
 }
 
 .logo {

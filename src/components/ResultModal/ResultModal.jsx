@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import AppContext from '../context/app-context';
-import useFirebase from '../hooks/useFirebase';
+import AppContext from '../../context/app-context';
+import useFirebase from '../../hooks/useFirebase';
 
 import styles from './ResultsModal.module.scss';
 
@@ -78,7 +78,7 @@ const ResultModal = () => {
               </form>
             </>
           )}
-          {isDone && (
+          {isDone && resId && (
             <form className={styles.doneForm} onSubmit={handleDone}>
               <h3>Your reservation was saved with Reservation Id of {resId}</h3>
               <button className={styles.btn} type='submit'>
