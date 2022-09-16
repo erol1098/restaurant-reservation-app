@@ -22,6 +22,7 @@ const PersonalInfoForm = ({ values, handleChange, errors, onCancel }) => {
           placeholder='Enter yor first name...'
           value={values.firstName}
           onChange={handleChange}
+          className={errors.firstName ? 'text-danger' : 'text-dark'}
         />
         {errors.firstName && <p>* {errors.firstName}</p>}
         <label htmlFor='lastName'>Last Name</label>
@@ -32,6 +33,7 @@ const PersonalInfoForm = ({ values, handleChange, errors, onCancel }) => {
           placeholder='Enter yor last name...'
           value={values.lastName}
           onChange={handleChange}
+          className={errors.lastName ? 'text-danger' : 'text-dark'}
         />
         {errors.lastName && <p>* {errors.lastName}</p>}
         <label htmlFor='birth'>Birth Date</label>
@@ -42,6 +44,7 @@ const PersonalInfoForm = ({ values, handleChange, errors, onCancel }) => {
           id='birth'
           value={values.birth}
           onChange={handleChange}
+          className={errors.birth ? 'text-danger' : 'text-dark'}
         />
         {errors.birth && <p>* {errors.birth}</p>}
         <label htmlFor='gender'>Gender</label>
@@ -50,6 +53,7 @@ const PersonalInfoForm = ({ values, handleChange, errors, onCancel }) => {
           id='gender'
           value={values.gender}
           onChange={handleChange}
+          className={errors.gender ? 'text-danger' : 'text-dark'}
         >
           <option value=''>-Select Gender-</option>
           <option value='Male'>Male</option>

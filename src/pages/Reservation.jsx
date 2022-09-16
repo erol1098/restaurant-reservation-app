@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 
 import { Formik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 
 import PersonalInfoForm from '../components/PersonalInfoForm';
 import Container from '../Layouts/Container/Container';
+import FoodChoiceForm from '../components/FoodChoiceForm';
+import ResultModal from '../components/ResultModal/ResultModal';
+
 import {
   foodChoiceSchema,
   userInfoSchema,
 } from '../validations/userValidation';
 import AppContext from '../context/app-context';
-import FoodChoiceForm from '../components/FoodChoiceForm';
-import ResultModal from '../components/ResultModal/ResultModal';
-import { useNavigate } from 'react-router-dom';
 
 const Reservation = () => {
   const navigate = useNavigate();

@@ -8,9 +8,6 @@ export const AppContextProvider = ({ children }) => {
   const [flag, setFlag] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log('user', userInfo);
-  console.log('food', foodChoice);
-
   const values = {
     userInfo,
     setUserInfo,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -6,6 +6,15 @@ import Logo from '../../assets/images/logo.png';
 import styles from './Header.module.scss';
 
 const Header = () => {
+  //? For Navbar collapse after clicking link
+  const navButton = useRef(null);
+  const linksContainerRef = useRef(null);
+
+  const collapseNav = () => {
+    navButton.current.classList.add('collapsed');
+    linksContainerRef.current.classList.remove('show');
+  };
+
   return (
     <nav
       className={`${styles.navbar} navbar sticky-top  navbar-expand-lg py-2 px-2`}
@@ -16,6 +25,7 @@ const Header = () => {
           <h3 className={styles.logo}>Merkez Lokantası</h3>
         </Link>
         <button
+          ref={navButton}
           className='navbar-toggler'
           type='button'
           data-bs-toggle='collapse'
@@ -26,20 +36,36 @@ const Header = () => {
         >
           <span className='navbar-toggler-icon' />
         </button>
-        <div className='collapse navbar-collapse' id='navbarTogglerDemo02'>
+        <div
+          ref={linksContainerRef}
+          className='collapse navbar-collapse'
+          id='navbarTogglerDemo02'
+        >
           <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
             <li className='nav-item ms-2'>
-              <Link className={`${styles.li} nav-link`} to={'/reservation'}>
+              <Link
+                className={`${styles.li} nav-link`}
+                to={'/reservation'}
+                onClick={collapseNav}
+              >
                 Make a Reservation
               </Link>
             </li>
             <li className='nav-item ms-2'>
-              <Link className={`${styles.li} nav-link`} to={'/about'}>
+              <Link
+                className={`${styles.li} nav-link`}
+                to={'/about'}
+                onClick={collapseNav}
+              >
                 About Us
               </Link>
             </li>
             <li className='nav-item ms-2'>
-              <Link className={`${styles.li} nav-link`} to={'/contact'}>
+              <Link
+                className={`${styles.li} nav-link`}
+                to={'/contact'}
+                onClick={collapseNav}
+              >
                 Contact
               </Link>
             </li>

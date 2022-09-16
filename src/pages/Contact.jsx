@@ -11,19 +11,21 @@ const Contact = () => {
       <section>
         <h2>Contact </h2>
         <div>
-          <MdLocationPin size={50} color='#bf976b' />
+          <MdLocationPin size={50} />
           <b>Hükümet St. No:2 Seferihisar/Izmir</b>
         </div>
         <div>
-          <MdPhoneInTalk size={50} color='#bf976b' />
+          <MdPhoneInTalk size={50} />
           <b>
-            <a href='tel:+095551112233'>+095551112233</a>
+            <a href='tel:+905551112233'>+90 555 111 2233</a>
           </b>
         </div>
         <div>
-          <GoMailRead size={50} color='#bf976b' />
+          <GoMailRead size={50} />
           <b>
-            <a href='mailto:merkez@gmail.com'>merkez@gmail.com</a>
+            <a href='mailto:merkezlokantasi@gmail.com'>
+              merkez_lokantasi@gmail.com
+            </a>
           </b>
         </div>
       </section>

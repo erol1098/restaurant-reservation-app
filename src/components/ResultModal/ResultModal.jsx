@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { SpinnerCircularFixed } from 'spinners-react';
@@ -13,6 +13,15 @@ const ResultModal = () => {
   const [isDone, setIsDone] = useState(false);
   const [resId, setResId] = useState('');
 
+  useEffect(() => {
+    return () => {
+      setIsDone(false);
+      setResId('');
+      handleCancel();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const {
     userInfo,
     foodChoice,
@@ -21,6 +30,7 @@ const ResultModal = () => {
     setIsOpen,
     setFlag,
   } = useContext(AppContext);
+
   const { addNewEntry } = useFirebase();
 
   const handleCancel = () => {
@@ -57,10 +67,10 @@ const ResultModal = () => {
               <h3>Do you confirm the reservation?</h3>
               <div className={styles.content}>
                 <p>
-                  <b>First Name:</b> {userInfo?.firstName}{' '}
+                  <b>First Name:</b> {userInfo?.firstName}
                 </p>
                 <p>
-                  <b>Last Name:</b> {userInfo?.lastName}{' '}
+                  <b>Last Name:</b> {userInfo?.lastName}
                 </p>
                 <p>
                   <b>Birth Date:</b>{' '}
@@ -76,13 +86,13 @@ const ResultModal = () => {
               </div>
               <div className={styles.content}>
                 <p>
-                  <b>Ingredients:</b> {foodChoice?.ingredients}{' '}
+                  <b>Ingredients:</b> {foodChoice?.ingredients.join(', ')}
                 </p>
                 <p>
-                  <b>Drink:</b> {foodChoice?.drink}{' '}
+                  <b>Drink:</b> {foodChoice?.drink}
                 </p>
                 <p>
-                  <b>Additional Requests :</b> {foodChoice?.additional}{' '}
+                  <b>Additional Requests :</b> {foodChoice?.additional}
                 </p>
               </div>
               <form className={styles.form} onSubmit={handleSaveReservation}>

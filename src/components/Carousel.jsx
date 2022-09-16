@@ -39,6 +39,7 @@ const Carousel = () => {
       <div className='carousel-inner'>
         <div
           className='carousel-item active'
+          data-bs-interval='5000'
           style={{
             width: '100%',
             height: 'calc(100vh - 6rem)',
@@ -53,6 +54,7 @@ const Carousel = () => {
         </div>
         <div
           className='carousel-item'
+          data-bs-interval='5000'
           style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
@@ -64,6 +66,7 @@ const Carousel = () => {
         </div>
         <div
           className='carousel-item'
+          data-bs-interval='5000'
           style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img
@@ -75,6 +78,7 @@ const Carousel = () => {
         </div>
         <div
           className='carousel-item'
+          data-bs-interval='5000'
           style={{ width: '100%', height: 'calc(100vh - 6rem)' }}
         >
           <img

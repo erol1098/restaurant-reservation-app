@@ -11,13 +11,8 @@ const useFirebase = () => {
   });
 
   //? For Firestore Database CRUD Operations
-  const {
-    addNewEntry,
-    getEntries,
-    updateEntries,
-    deleteEntry,
-    error: errorDb,
-  } = useFirestore(db);
+  const { addNewEntry, getEntries, updateEntries, deleteEntry, error } =
+    useFirestore(db);
 
   return {
     //? Firestore
@@ -25,7 +20,7 @@ const useFirebase = () => {
     getEntries,
     updateEntries,
     deleteEntry,
-    errorDb,
+    error,
   };
 };
 export default useFirebase;

@@ -4,7 +4,7 @@
   min-height: 6rem;
   background: $Primary;
   border-bottom: 5px solid $Text;
-  transition: height 1s;
+  transition: all 3s;
 }
 
 .logo {
@@ -16,6 +16,7 @@
 .li {
   color: $PrimaryText;
   font-weight: 700;
+  font-size: 1.2rem;
 
   &:hover {
     color: $TextHover;
