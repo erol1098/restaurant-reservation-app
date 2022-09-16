@@ -48,7 +48,7 @@ const Header = () => {
                 to={'/reservation'}
                 onClick={collapseNav}
               >
-                Make a Reservation
+                <button>Make a Reservation</button>
               </Link>
             </li>
             <li className='nav-item ms-2'>
@@ -57,7 +57,7 @@ const Header = () => {
                 to={'/about'}
                 onClick={collapseNav}
               >
-                About Us
+                <button>About Us</button>
               </Link>
             </li>
             <li className='nav-item ms-2'>
@@ -66,7 +66,7 @@ const Header = () => {
                 to={'/contact'}
                 onClick={collapseNav}
               >
-                Contact
+                <button>Contact</button>
               </Link>
             </li>
           </ul>

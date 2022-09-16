@@ -76,6 +76,7 @@
     & b {
       color: $Accent;
     }
+
     & > textarea {
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       border: none;
@@ -87,6 +88,7 @@
     & > div {
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       padding: 0.3rem;
 
