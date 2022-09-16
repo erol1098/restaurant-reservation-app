@@ -20,7 +20,7 @@ const Header = () => {
       className={`${styles.navbar} navbar sticky-top  navbar-expand-lg py-2 px-2`}
     >
       <div className='container-fluid'>
-        <Link className='nav-link d-flex gap-3 align-items-center' to={'/'}>
+        <Link className='nav-link d-flex gap-1 align-items-center' to={'/'}>
           <img src={Logo} width={75} alt='logo' />
           <h3 className={styles.logo}>Merkez Lokantası</h3>
         </Link>

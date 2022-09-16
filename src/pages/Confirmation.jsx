@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { SpinnerCircularFixed } from 'spinners-react';
 
-import ConfirmationWrapper from '../components/ConfirmWrapper/ConfirmWrapper';
 import AppContext from '../context/app-context';
 import useFirebase from '../hooks/useFirebase';
+import ConfirmationWrapper from '../Layouts/Confirm/ConfirmWrapper';
 
 const Confirmation = () => {
   console.log('object');
@@ -49,71 +49,72 @@ const Confirmation = () => {
     setResId('');
     handleCancel();
   };
-
-  return (
-    <ConfirmationWrapper>
-      <section>
-        {!isDone && (
-          <>
-            <h3>Do you confirm the reservation?</h3>
-            <div>
-              <p>
-                <b>First Name:</b> {userInfo?.firstName}
-              </p>
-              <p>
-                <b>Last Name:</b> {userInfo?.lastName}
-              </p>
-              <p>
-                <b>Birth Date:</b>{' '}
-                {new Intl.DateTimeFormat('tr-TR', {
-                  day: '2-digit',
-                  month: 'long',
-                  year: 'numeric',
-                }).format(new Date(userInfo?.birth))}
-              </p>
-              <p>
-                <b>Gender:</b> {userInfo?.gender}
-              </p>
-            </div>
-            <div>
-              <p>
-                <b>Ingredients:</b> {foodChoice?.ingredients.join(', ')}
-              </p>
-              <p>
-                <b>Drink:</b> {foodChoice?.drink}
-              </p>
-              <p>
-                <b>Additional Requests :</b> {foodChoice?.additional}
-              </p>
-            </div>
-            <form onSubmit={handleSaveReservation}>
-              <button type='button' onClick={handleCancel}>
-                Cancel
-              </button>
-              <button type='submit'>Confirm</button>
-            </form>
-          </>
-        )}
-        {isDone && (
-          <article>
-            {resId && (
-              <>
-                <h4>Your reservation was saved with this reservation id:</h4>
-                <b>
-                  <i>{resId}</i>
-                </b>
-
-                <button type='button' onClick={handleDone}>
-                  Done
+  if (!userInfo && !foodChoice) return <Navigate to={'/reservation'} />;
+  else
+    return (
+      <ConfirmationWrapper>
+        <section>
+          {!isDone && (
+            <>
+              <h3>Do you confirm the reservation?</h3>
+              <div>
+                <p>
+                  <b>First Name:</b> {userInfo?.firstName}
+                </p>
+                <p>
+                  <b>Last Name:</b> {userInfo?.lastName}
+                </p>
+                <p>
+                  <b>Birth Date:</b>{' '}
+                  {new Intl.DateTimeFormat('tr-TR', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric',
+                  }).format(new Date(userInfo?.birth))}
+                </p>
+                <p>
+                  <b>Gender:</b> {userInfo?.gender}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <b>Ingredients:</b> {foodChoice?.ingredients.join(', ')}
+                </p>
+                <p>
+                  <b>Drink:</b> {foodChoice?.drink}
+                </p>
+                <p>
+                  <b>Additional Requests :</b> {foodChoice?.additional}
+                </p>
+              </div>
+              <form onSubmit={handleSaveReservation}>
+                <button type='button' onClick={handleCancel}>
+                  Cancel
                 </button>
-              </>
-            )}
-            {!resId && <SpinnerCircularFixed size={100} />}
-          </article>
-        )}
-      </section>
-    </ConfirmationWrapper>
-  );
+                <button type='submit'>Confirm</button>
+              </form>
+            </>
+          )}
+          {isDone && (
+            <article>
+              {resId && (
+                <>
+                  <h4>Your reservation was saved with this reservation id:</h4>
+                  <b>
+                    <i>{resId}</i>
+                  </b>
+
+                  <button type='button' onClick={handleDone}>
+                    Done
+                  </button>
+                </>
+              )}
+              {!resId && <SpinnerCircularFixed size={100} />}
+            </article>
+          )}
+        </section>
+      </ConfirmationWrapper>
+    );
 };
 
 export default Confirmation;
