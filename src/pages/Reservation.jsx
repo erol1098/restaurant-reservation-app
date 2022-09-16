@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import PersonalInfoForm from '../components/PersonalInfoForm';
 import Container from '../Layouts/Container/Container';
 import FoodChoiceForm from '../components/FoodChoiceForm';
-import ResultModal from '../components/ResultModal/ResultModal';
 
 import {
   foodChoiceSchema,
@@ -16,13 +15,11 @@ import AppContext from '../context/app-context';
 
 const Reservation = () => {
   const navigate = useNavigate();
-  const { setUserInfo, setFoodChoice, flag, setFlag, isOpen, setIsOpen } =
-    useContext(AppContext);
+  const { setUserInfo, setFoodChoice, flag, setFlag } = useContext(AppContext);
 
   const handleCancel = () => {
     setUserInfo('');
     setFoodChoice('');
-    setIsOpen(false);
     setFlag(false);
     navigate('/');
   };
@@ -64,7 +61,7 @@ const Reservation = () => {
             validationSchema={foodChoiceSchema}
             onSubmit={(values) => {
               setFoodChoice(values);
-              setIsOpen(true);
+              navigate('/confirm');
             }}
             component={(props) => (
               <FoodChoiceForm {...props} onCancel={handleCancel} />
@@ -74,7 +71,6 @@ const Reservation = () => {
           />
         </>
       )}
-      {isOpen && <ResultModal />}
     </Container>
   );
 };
