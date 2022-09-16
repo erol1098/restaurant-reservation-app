@@ -24,7 +24,7 @@
 <!-- OVERVIEW -->
 
 ## Overview
-
+![image](https://github.com/erol1098/restaurant-reservation-app/blob/master/src/assets/images/reservation-app.gif)
 
 ## Built With
 
@@ -34,10 +34,12 @@
 - Firestore Database
 - Bootstrap
 - SCSS
+- Formik 
+- Yup
 
 ## Features
 
-- Lorem
+- This is a simple but handy restaurant reservation application. 
 
 - I used the "web-firebase" library I wrote for database operations. Thanks to this library, you can easily use Firestore's database features.  
 - I am sharing the link to the library here for those who are interested.   <a href="https://www.npmjs.com/package/web-firebase">npm link</a>  
